@@ -135,5 +135,15 @@ body {
             background-color: $white;
             margin-bottom: 1rem;
         }
+
+    }
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #111111;
+    * {
+        color: $white !important;
     }
 }

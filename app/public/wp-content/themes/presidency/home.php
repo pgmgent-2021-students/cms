@@ -26,10 +26,16 @@
                     <i>
                         Geschreven door: <?php the_author_posts_link() ?>
                     </i>
+                    <i>
+                        <?php the_category() ?>
+                    </i>
                 </div>
             </div>
         <?php }
     ?>
+
+    <div class="nav-previous alignleft"><?php previous_posts_link( 'Older posts' ); ?></div>
+<div class="nav-next alignright"><?php next_posts_link( 'Newer posts' ); ?></div>
 </div>
 
 <?php get_footer(); ?>

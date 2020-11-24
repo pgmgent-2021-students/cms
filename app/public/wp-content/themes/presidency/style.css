@@ -731,3 +731,13 @@ body .container .blog h2 a {
   text-decoration: none;
 }
 
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #111111;
+}
+
+footer * {
+  color: #fff !important;
+}
+

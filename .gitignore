@@ -8,11 +8,7 @@ logs/*
 # "mu-plugins", "plugins", "themes" directory
 app/public/wp-content/*
 !app/public/wp-content/mu-plugins/
-!app/public/wp-content/plugins/
 !app/public/wp-content/themes/
-
-# ignore these plugins
-app/public/wp-content/plugins/hello.php
 
 # ignore specific themes
 app/public/wp-content/themes/twenty*/
