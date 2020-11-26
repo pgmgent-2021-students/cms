@@ -15,7 +15,8 @@ function addEventPostTypes() {
             'thumbnail',
         ),
         'show_in_rest' => true,
-        'taxonomies' => array('location')
+        'taxonomies' => array('location'),
+        'has_archive' => true
     ));
 }
 

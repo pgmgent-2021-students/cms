@@ -38,7 +38,7 @@
             <?php } wp_reset_postdata(); ?>
 
             <a href="<?php echo get_category_link(get_cat_ID( 'news' )); ?>">
-                Nieuws
+                <?php _e( 'News', 'presidency' ); ?>
             </a>
         <hr/>
 

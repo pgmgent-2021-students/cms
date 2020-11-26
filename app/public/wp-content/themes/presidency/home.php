@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="container">
-    <h1>Blog</h1>
+    <h1><?php  _e( 'Blog Page' ); ?></h1>
 
     <p>
         <?php if(is_home()) { echo 'Dit is de blogpagina.'; } ?>
@@ -24,7 +24,7 @@
 
                 <div>
                     <i>
-                        Geschreven door: <?php the_author_posts_link() ?>
+                        <?php _e('Written by', 'presidency'); the_author_posts_link(); ?>
                     </i>
                     <i>
                         <?php the_category() ?>
