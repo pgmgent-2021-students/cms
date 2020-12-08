@@ -12,6 +12,8 @@
                 <?php dynamic_sidebar( 'footer-form' ); ?>
             </aside>
         <?php } ?>
-    </footer>
+
+        <div id="results" class="results hidden"></div>
+        </footer>
     </body>
 </html>

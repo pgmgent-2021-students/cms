@@ -3,6 +3,7 @@
 function addEventPostTypes() {
     register_post_type('event', array(
         'label' => 'Event',
+        'rewrite' => array('slug' => 'events'),
         'labels' => array(
             'add_new_item' =>  'Add new Event',
         ),

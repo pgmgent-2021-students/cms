@@ -13,6 +13,28 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: presidency
 */
 
+.product {
+    display: grid;
+}
+
+.woocommerce-product-gallery {
+    opacity: 1 !important;
+}
+
+.results {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
 $light: #ebebeb;
 $white: #fff;
 $yellow: #e7bd00;

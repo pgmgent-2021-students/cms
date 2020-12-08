@@ -19,5 +19,7 @@
                     'theme_location' => 'header-nav'
                 )) ?>
             </nav>
+
+            <input type="search" id="js-search"/>
         </header>
         <main>
