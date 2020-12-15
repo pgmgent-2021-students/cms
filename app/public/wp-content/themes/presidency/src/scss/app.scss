@@ -13,6 +13,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: presidency
 */
 
+.login h1 a {
+    background-color: red;
+}
+
 .product {
     display: grid;
 }
@@ -137,9 +141,6 @@ body {
     }
 
     .container {
-        max-width: 500px;
-        padding: 0 1rem;
-        margin: 0 auto;
 
         .blog {
             display: block;

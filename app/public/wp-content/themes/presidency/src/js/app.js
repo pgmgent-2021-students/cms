@@ -36,4 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
     if(searchInput) {
         searchInput.addEventListener('input', e => handleSearch(e, overlay));
     }
+
 });

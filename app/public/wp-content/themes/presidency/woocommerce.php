@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <div class="container">
-iuergizehfilhzef
+    Maakt gebruik van WooCommerce.php
     <?php woocommerce_content() ?>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer(); ?>  

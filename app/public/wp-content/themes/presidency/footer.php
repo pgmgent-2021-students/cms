@@ -15,5 +15,7 @@
 
         <div id="results" class="results hidden"></div>
         </footer>
+
+        <?php wp_footer() ?>
     </body>
 </html>
