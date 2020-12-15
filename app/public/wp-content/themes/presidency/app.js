@@ -2126,8 +2126,6 @@ process.umask = function() { return 0; };
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "../../node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _likes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./likes */ "./src/js/likes.js");
-
 
 
 var handleOverlay = function handleOverlay(length, element) {
@@ -2167,90 +2165,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return handleSearch(e, overlay);
     });
   }
-
-  Object(_likes__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
-
-/***/ }),
-
-/***/ "./src/js/likes.js":
-/*!*************************!*\
-  !*** ./src/js/likes.js ***!
-  \*************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "../../node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var initLikes = function initLikes() {
-  var likeBtn = document.querySelector('#like');
-  console.log(likeBtn);
-
-  if (likeBtn) {
-    likeBtn.addEventListener('click', function (e) {
-      var btn = e.target.closest('.btn');
-      var isLiked = JSON.parse(btn.getAttribute('aria-pressed'));
-      var countElement = btn.querySelector('span');
-
-      if (isLiked) {
-        removeLike(countElement);
-      } else {
-        createLike(countElement);
-      }
-    });
-  }
-};
-
-var createLike = function createLike(span) {
-  var count = parseInt(span.innerHTML);
-  span.innerHTML = count + 1;
-  span.parentElement.setAttribute('aria-pressed', true);
-  span.parentElement.classList.remove('bg-info');
-  span.parentElement.classList.add('bg-danger');
-  span.parentElement.setAttribute('disabled', true); // Doe dit eerst eerst zonder headers en zelf eerst zonder data
-
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(testData.rootUrl, "/wp-json/presidency/likes"), {
-    'productId': span.getAttribute('data-product-id')
-  }, {
-    headers: {
-      'X-WP-Nonce': testData.nonce
-    }
-  }).then(function (response) {
-    console.log(response);
-    span.parentElement.removeAttribute('disabled');
-  })["catch"](function (error) {
-    span.innerHTML = count;
-  });
-};
-
-var removeLike = function removeLike(span) {
-  var count = parseInt(span.innerHTML);
-  var likeId = span.getAttribute('data-like-id');
-  span.innerHTML = count - 1;
-  span.parentElement.setAttribute('aria-pressed', false);
-  span.parentElement.classList.remove('bg-danger');
-  span.parentElement.classList.add('bg-info');
-  span.parentElement.setAttribute('disabled', true);
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("".concat(testData.rootUrl, "/wp-json/presidency/likes"), {
-    data: {
-      likeId: likeId
-    },
-    headers: {
-      'X-WP-Nonce': testData.nonce
-    }
-  }).then(function (response) {
-    console.log(response);
-    span.parentElement.removeAttribute('disabled');
-  })["catch"](function (error) {
-    span.innerHTML = count;
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (initLikes);
 
 /***/ }),
 

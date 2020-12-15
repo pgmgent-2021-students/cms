@@ -37,3 +37,41 @@ add_filter('woocommerce_show_page_title', function() {
     return false;
 });
 
+function addLikeButton() {
+    global $product;
+    $product_id = $product->get_id();
+
+    $metaQuery = array(
+        array(
+            'key' => 'liked_product_id',
+            'compare' => '=',
+            'value' => $product_id
+        )
+    );
+
+    $likesQuery = new WP_Query(array(
+        'post_type' => 'post',
+        'meta_query' => $metaQuery
+    ));
+
+    $userLikesQuery = new WP_Query(array(
+        'author' => get_current_user_id(),
+        'post_type' => 'like',
+        'meta_query' => $metaQuery
+    ));
+
+    $likesCount = $likesQuery->found_posts;
+    $hasUserLikedPost = $userLikesQuery->found_posts;
+
+    if(is_user_logged_in()) {
+        if($hasUserLikedPost) {
+            echo "<button class='btn btn-danger'>" . $likesCount ."</button>";
+        } else {
+            echo "<button class='btn btn-outline-danger'>" . $likesCount ."</button>";
+        }
+    } else {
+        echo 'Likes: ' . $likesCount;
+    }
+}
+
+add_action('woocommerce_single_product_summary', 'addLikeButton', 25);

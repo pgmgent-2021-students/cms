@@ -22,3 +22,24 @@ function addEventPostTypes() {
 }
 
 add_action('init', 'addEventPostTypes');
+
+
+// Custom Like Post Type
+function addLikePostType() {
+    register_post_type('like', array(
+            'labels' => array(
+                'name' => 'Likes',
+                'add_new_item' => 'Add new like',
+                'edit_item' => 'Edit like',
+                'all_items' => 'All likes',
+                'singular_name' => 'Like',
+            ),
+            'support' => array('title'),
+            'public' => false,
+            'menu_icon' => 'dashicons-heart',
+            'show_ui' => true
+        ));
+}
+
+add_action('init', 'addLikePostType');
+

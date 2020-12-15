@@ -620,16 +620,6 @@ Text Domain: presidency
   display: none;
 }
 
-.btn {
-  display: inline-block;
-  background-color: #e7bd00;
-  color: #fff;
-  padding: 1rem;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  margin: 1rem 0;
-}
-
 html,
 body {
   min-height: 100vh;
